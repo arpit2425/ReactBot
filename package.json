@@ -4,15 +4,19 @@
   "description": "React App with chatbot",
   "main": "index.js",
   "engines": {
-    "node":"12.13.0",
-    "npm":"6.12.0"
+    "node": "12.13.0",
+    "npm": "6.12.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "backend":"nodemon index.js"
   },
   "author": "Arpit Trivedi",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
