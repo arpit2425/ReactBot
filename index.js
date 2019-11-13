@@ -7,5 +7,4 @@ res.send({'Hello':'there'})
 
 
 
-const PORT=process.env.PORT || 5000;
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
