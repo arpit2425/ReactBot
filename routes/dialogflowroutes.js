@@ -1,29 +1,21 @@
-const dialogflow=require('dialogflow');
-const config=require('../config/keys');
-const uuid = require('uuid');
-const sessionClient=new dialogflow.SessionsClient({
-  keyFilename:"C:/Users/Arpit/Downloads/reactappagent-cactkb-3903e1a48a93.json"}
-);
-const sessionId = uuid.v4();
-const sessionPath=sessionClient.sessionPath(config.googleProjectID,sessionId)
+const chatbot=require('../chatbot/chatbot');
+var express = require('express')
+var bodyParser = require('body-parser')
+ 
+var app = express()
+ 
+// create application/json parser
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 module.exports=app=>{
     app.get('/',(req,res)=>{
         res.send({'Hi':'there'})
         });
         
-        app.post('/api/df_text_query',async (req,res)=>{
-            const request = {
-                session: sessionPath,
-                queryInput: {
-                  text: {
-                    // The query to send to the dialogflow agent
-                    text:"I want to learn java",
-                    // The language used by the client (en-US)
-                    languageCode: config.dialogFlowSessionLanguageCode,
-                  },
-                },
-              };
-              const responses = await sessionClient.detectIntent(request);
+        app.post('/api/df_text_query', jsonParser,async (req,res)=>{
+           let responses=await chatbot.textQuery(req.body.text,req.body.parameters);
               
 
             res.send(responses[0].queryResult.fulfillmentText)
@@ -35,6 +27,11 @@ module.exports=app=>{
         
         
 }
+
+
+
+// Another Way...
+
 // const dialogflow = require('dialogflow');
 // const uuid = require('uuid');
 
