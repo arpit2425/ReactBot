@@ -9,13 +9,16 @@
   },
   "scripts": {
     "start": "node index.js",
+    "test": "node routes/dialogflowroutes",
     "backend": "nodemon index.js"
   },
   "author": "Arpit Trivedi",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "dialogflow": "^0.14.1",
+    "express": "^4.17.1",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
