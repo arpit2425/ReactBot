@@ -10,7 +10,9 @@
   "scripts": {
     "start": "node index.js",
     "test": "node routes/dialogflowroutes",
-    "backend": "nodemon index.js"
+    "backend": "nodemon index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "author": "Arpit Trivedi",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "uuid": "^3.3.3"
   },
   "devDependencies": {
+    "concurrently": "^5.0.0",
     "nodemon": "^1.19.4"
   }
 }
