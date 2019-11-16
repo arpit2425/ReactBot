@@ -3,16 +3,25 @@ const config=require('../config/keys');
 const struct=require('./structjson');
 const uuid = require('uuid');
 const projectID=config.googleProjectID;
+const credentials = {
+  client_email: config.googleClientEmail,
+  private_key:
+    config.googlePrivateKey,
+};
 // const credentials={
 // client_email:config.googleClientEmail,
-// privateKey:JSON.parse(config.googlePrivateKey),
+// privateKey:config.googlePrivateKey,
 // };
-const sessionClient = new dialogflow.SessionsClient({
+// const sessionClient = new dialogflow.SessionsClient({
     
-   keyFilename:"C:/Users/Arpit/Downloads/reactappagent-cactkb-3903e1a48a93.json"
+//    keyFilename:"C:/Users/Arpit/Downloads/reactappagent-cactkb-3903e1a48a93.json"
   
-   });
-// const sessionClient=new dialogflow.SessionsClient({projectID,credentials});
+//    });
+const sessionClient = new dialogflow.SessionsClient({
+  projectID,
+  credentials,
+});
+
 const sessionId = uuid.v4();
 const sessionPath=sessionClient.sessionPath(config.googleProjectID,sessionId)
 module.exports={
