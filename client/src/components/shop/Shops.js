@@ -2,7 +2,7 @@ import React from 'react';
 import ItemList from './ItemList'
 const Shops=()=>{
     return(<div>
-        <H1>Shops !!!</H1>
+        <h1>Shops !!!</h1>
         <ItemList/>
        
     </div>);

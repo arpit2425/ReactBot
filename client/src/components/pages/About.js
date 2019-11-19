@@ -1,7 +1,7 @@
 import React from 'react';
 const About=()=>{
     return(<div>
-        <H1>About !!!</H1>
+        <h1>About !!!</h1>
        
     </div>);
 

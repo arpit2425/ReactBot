@@ -1,7 +1,7 @@
 import React from 'react';
 const Landing=()=>{
     return(<div>
-        <H1>Great stuff</H1>
+        <h1>Great stuff</h1>
         with the help of chatbot
     </div>);
 
