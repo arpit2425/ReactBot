@@ -11,7 +11,7 @@ const App=()=>{
 
             
             <BrowserRouter>
-            <div>
+            <div className="container">
             <Header/>
                 <Route exact path="/" component={Landing}/>
                 <Route exact path="/Shop" component={Shops}/>
